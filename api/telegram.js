@@ -1,16 +1,13 @@
 export default async function handler(req, res) {
-
     if (req.method !== "POST") {
         return res.status(405).json({
             success: false,
-            message: "Method Not Allowed"
+            message: "Method Not Allowed",
         });
     }
 
     try {
-
         const {
-
             name,
             phone,
             quest,
@@ -19,37 +16,31 @@ export default async function handler(req, res) {
             players,
             packageType,
             comment,
-            services
-
+            services,
         } = req.body;
 
         const message = `
 🎭 <b>НОВА ЗАЯВКА</b>
 
 👤 <b>Ім'я:</b> ${name}
-
 📞 <b>Телефон:</b> ${phone}
 
 🗝️ <b>Квест:</b> ${quest}
-
 🎁 <b>Пакет:</b> ${packageType}
 
 📅 <b>Дата:</b> ${date}
-
 🕒 <b>Час:</b> ${time}
 
 👥 <b>Гравців:</b> ${players}
 
 ⭐ <b>Додаткові послуги:</b>
-
 ${services || "Не обрано"}
 
 💬 <b>Коментар:</b>
-
 ${comment || "-"}
 `;
 
-        const response = await fetch(
+        const telegramResponse = await fetch(
             `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`,
             {
                 method: "POST",
@@ -57,45 +48,36 @@ ${comment || "-"}
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-
                     chat_id: process.env.CHAT_ID,
-
                     text: message,
-
-                    parse_mode: "HTML"
-
+                    parse_mode: "HTML",
                 }),
             }
         );
 
-        const data = await response.json();
+        const telegramData = await telegramResponse.json();
 
-        if (!data.ok) {
+        console.log("BOT_TOKEN exists:", !!process.env.BOT_TOKEN);
+        console.log("CHAT_ID:", process.env.CHAT_ID);
+        console.log("Telegram response:", telegramData);
 
-            console.error("Telegram API Error:", data);
 
-            throw new Error(
-                `${data.error_code}: ${data.description}`
-            );
-
+        if (!telegramData.ok) {
+            return res.status(500).json({
+                success: false,
+                telegram: telegramData,
+            });
         }
 
         return res.status(200).json({
-            success: true
+            success: true,
         });
-
     } catch (error) {
-
-        console.error(error);
+        console.error("SERVER ERROR:", error);
 
         return res.status(500).json({
-
             success: false,
-
-            message: error.message
-
+            message: error.message,
         });
-
     }
-
 }
