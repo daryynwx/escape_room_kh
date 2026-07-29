@@ -5,11 +5,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Escape Room Ірпінь | Квести з акторами</title>
+    <title>Escape Room Харків | Квести з акторами</title>
 
     <meta
       name="description"
-      content="Квести з живими акторами в Ірпені. Дні народження, корпоративи, пригоди для дітей та дорослих."
+      content="Квести з живими акторами в Харкові. Дні народження, корпоративи, пригоди для дітей та дорослих."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,8 +68,8 @@
           <h1>Пригоди, які запам'ятаються назавжди</h1>
 
           <p>
-            День народження, випускний, корпоратив чи просто незабутній вечір —
-            ми створимо справжню пригоду.
+            День народження, корпоратив чи просто незабутній вечір — ми створимо
+            справжню пригоду.
           </p>
 
           <div class="hero-buttons">
@@ -399,7 +399,7 @@
       </div>
     </section>
 
-    <section class="booking-steps">
+    <section id="booking" class="booking-steps">
       <div class="container">
         <div class="section-title">
           <h2>Як проходить бронювання</h2>
@@ -519,7 +519,7 @@
           <p>Будемо раді відповісти на всі ваші запитання.</p>
 
           <ul>
-            <li>📍 Ірпінь</li>
+            <li>📍 Харків</li>
 
             <li>📞 +38 (0XX) XXX XX XX</li>
 
@@ -536,11 +536,165 @@
         </div>
       </div>
     </section>
+    <section class="booking" id="booking">
+      <div class="container">
+        <div class="section-title">
+          <h2>Залишити заявку</h2>
+          <p>
+            Заповніть форму, і наш адміністратор зв'яжеться з вами для
+            підтвердження бронювання та уточнення всіх деталей.
+          </p>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <div class="form-group">
+            <label for="name">Ім'я</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ваше ім'я"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+380..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="quest">Оберіть квест</label>
+
+            <select id="quest" name="quest" required>
+              <option value="">Оберіть квест</option>
+
+              <option>Гаррі Поттер</option>
+              <option>Пірати Карибського моря</option>
+              <option>Венздей</option>
+              <option>Мавка</option>
+              <option>Судна ніч</option>
+              <option>Астрал</option>
+              <option>Цирк виродків</option>
+              <option>Пастка людожера</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="package">Пакет гри</label>
+
+            <select id="package" name="package">
+              <option>Мінімальний (2 години)</option>
+              <option>Оптимальний (3 години)</option>
+              <option>Максимальний (4 години)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Дата</label>
+
+            <input type="date" id="date" name="date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="time">Бажаний час</label>
+
+            <input type="time" id="time" name="time" required />
+          </div>
+
+          <div class="form-group">
+            <label for="players">Кількість гравців</label>
+
+            <input
+              type="number"
+              id="players"
+              name="players"
+              min="2"
+              max="20"
+              value="2"
+              required
+            />
+          </div>
+
+          <div class="form-group full-width">
+            <label>Додаткові послуги</label>
+
+            <div class="checkboxes">
+              <label>
+                <input type="checkbox" value="Мафія" />
+                Гра в мафію
+              </label>
+
+              <label>
+                <input type="checkbox" value="Кейтеринг" />
+                Кейтеринг
+              </label>
+
+              <label>
+                <input type="checkbox" value="Лаунж-зона" />
+                Лаунж-зона
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="comment">Коментар</label>
+
+            <textarea
+              id="comment"
+              name="comment"
+              rows="5"
+              placeholder="Наприклад: День народження, побажання, питання..."
+            ></textarea>
+          </div>
+
+          <div class="full-width">
+            <button class="booking-submit" type="submit">
+              Надіслати заявку
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
     <footer class="footer">
       <div class="container">
         <p>© 2026 Escape Room. Усі права захищені.</p>
       </div>
     </footer>
+
+    <!-- =======================================================
+     QUEST MODAL
+======================================================= -->
+
+    <div class="quest-modal">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+
+        <img src="" alt="" class="modal-image" />
+
+        <div class="modal-body">
+          <h2 class="modal-title"></h2>
+
+          <div class="modal-info">
+            <span class="modal-time"></span>
+
+            <span class="modal-players"></span>
+
+            <span class="modal-age"></span>
+          </div>
+
+          <p class="modal-description"></p>
+
+          <button class="btn modal-book">Залишити заявку</button>
+        </div>
+      </div>
+    </div>
 
     <script src="js/burger.js"></script>
 
@@ -555,5 +709,9 @@
     <script src="js/reviews.js"></script>
 
     <script src="js/faq.js"></script>
+
+    <script src="js/animation.js"></script>
+
+    <button class="scroll-top">↑</button>
   </body>
 </html>

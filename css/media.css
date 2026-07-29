@@ -206,8 +206,47 @@
 
 }
 
-.nav.active {
+@media(max-width:768px) {
 
-    right: 0;
+    .modal-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .modal-image {
+
+        height: 260px;
+
+    }
+
+    .modal-body {
+
+        padding: 30px;
+
+    }
+
+    .modal-title {
+
+        font-size: 30px;
+
+    }
+
+}
+
+/* =========================
+   BOOKING
+========================= */
+
+@media (max-width:768px) {
+
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+
+    .checkboxes {
+        flex-direction: column;
+        gap: 12px;
+    }
 
 }
