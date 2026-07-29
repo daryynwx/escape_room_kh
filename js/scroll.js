@@ -1,27 +1,26 @@
 const scrollBtn = document.querySelector(".scroll-top");
 
-window.addEventListener("scroll", () => {
+if (scrollBtn) {
 
-    if (window.scrollY > 500) {
+    window.addEventListener("scroll", () => {
 
-        scrollBtn.classList.add("show");
-
-    } else {
-
-        scrollBtn.classList.remove("show");
-
-    }
-
-});
-
-scrollBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
+        if (window.scrollY > 500) {
+            scrollBtn.classList.add("show");
+        } else {
+            scrollBtn.classList.remove("show");
+        }
 
     });
 
-});
+    scrollBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
