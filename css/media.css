@@ -250,3 +250,18 @@
     }
 
 }
+
+@media (max-width: 768px) {
+
+    .locations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .location-card iframe {
+        height: 300px;
+    }
+
+    .location-card h3 {
+        font-size: 18px;
+    }
+}
