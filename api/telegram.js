@@ -72,7 +72,11 @@ ${comment || "-"}
 
         if (!data.ok) {
 
-            throw new Error(data.description);
+            console.error("Telegram API Error:", data);
+
+            throw new Error(
+                `${data.error_code}: ${data.description}`
+            );
 
         }
 
@@ -81,6 +85,8 @@ ${comment || "-"}
         });
 
     } catch (error) {
+
+        console.error(error);
 
         return res.status(500).json({
 
