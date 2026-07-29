@@ -1,0 +1,132 @@
+@media(max-width:992px) {
+
+    .hero h1 {
+
+        font-size: 45px;
+
+    }
+
+    .gallery {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    header .container {
+
+        flex-direction: column;
+
+    }
+
+    nav ul {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding-top: 20px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 35px;
+
+        text-align: center;
+
+    }
+
+    .hero p {
+
+        text-align: center;
+
+    }
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .card img {
+
+        height: 350px;
+
+    }
+
+}
+
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+@media (max-width:768px) {
+
+    .burger {
+
+        display: block;
+
+    }
+
+    nav {
+
+        position: fixed;
+
+        top: 0;
+
+        right: -100%;
+
+        width: 280px;
+
+        height: 100vh;
+
+        background: #1d1d1d;
+
+        transition: .4s;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        box-shadow: -5px 0 20px rgba(0, 0, 0, .3);
+
+    }
+
+    nav.active {
+
+        right: 0;
+
+    }
+
+    nav ul {
+
+        flex-direction: column;
+
+        gap: 30px;
+
+    }
+
+    nav a {
+
+        font-size: 22px;
+
+    }
+
+}
+
+@media(max-width:992px) {
+
+    .card {
+
+        transform: none !important;
+
+    }
+
+}

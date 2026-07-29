@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Escape Room</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">ESCAPE ROOM</div>
+
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#">Головна</a></li>
+            <li><a href="#quests">Квести</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Контакти</a></li>
+
+            <li class="phone">
+              <a href="tel:+380991112233"> 📞 +38 (099) 111-22-33 </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="overlay">
+        <h1>Поринь у світ пригод</h1>
+
+        <p>Найатмосферніші квести у твоєму місті</p>
+
+        <a href="#quests" class="btn"> Обрати квест </a>
+      </div>
+    </section>
+
+    <section id="quests">
+      <h2>Наші квести</h2>
+
+      <div class="gallery">
+        <!-- Гаррі Поттер -->
+
+        <div class="card" data-quest="harry">
+          <img src="images/harry.jpg" />
+
+          <div class="info">
+            <h3>Гаррі Поттер</h3>
+
+            <h4>Косий провулок</h4>
+
+            <p>Знайди магічний артефакт та відкрий таємниці чарівного світу.</p>
+          </div>
+        </div>
+
+        <!-- Кальмар -->
+
+        <div class="card" data-quest="squid">
+          <img src="images/squid.jpg" />
+
+          <div class="info">
+            <h3>Гра в кальмара</h3>
+
+            <p>Чи зможеш пройти всі випробування?</p>
+          </div>
+        </div>
+
+        <!-- Пірати -->
+
+        <div class="card" data-quest="pirates">
+          <img src="images/pirates.jpg" />
+
+          <div class="info">
+            <h3>Пірати</h3>
+
+            <p>Пошуки загубленого скарбу капітана.</p>
+          </div>
+        </div>
+
+        <!-- Hogwarts -->
+
+        <div class="card" data-quest="hogwarts">
+          <img src="images/hogwarts.jpg" />
+
+          <div class="info">
+            <h3>Піжамна вечірка</h3>
+
+            <h4>у Гоґвортсі</h4>
+
+            <p>Магічна ніч пригод та загадок.</p>
+          </div>
+        </div>
+
+        <!-- Freak Circus -->
+
+        <div class="card" data-quest="circus">
+          <img src="images/circus.jpg" />
+
+          <div class="info">
+            <h3>Цирк виродків</h3>
+
+            <p>За мотивами новели The Freak Circus.</p>
+          </div>
+        </div>
+
+        <!-- Naruto -->
+
+        <div class="card" data-quest="naruto">
+          <img src="images/naruto.jpg" />
+
+          <div class="info">
+            <h3>Naruto</h3>
+
+            <p>Стань шинобі та виконай місію.</p>
+          </div>
+        </div>
+
+        <!-- Wednesday -->
+
+        <div class="card" data-quest="wednesday">
+          <img src="images/wednesday.jpg" />
+
+          <div class="info">
+            <h3>Wednesday</h3>
+
+            <p>Розкрий моторошну таємницю академії.</p>
+          </div>
+        </div>
+
+        <!-- Labubu -->
+
+        <div class="card" data-quest="labubu">
+          <img src="images/labubu.jpg" />
+
+          <div class="info">
+            <h3>Labubu</h3>
+
+            <p>Кумедний світ, що приховує небезпеку.</p>
+          </div>
+        </div>
+
+        <!-- Trap -->
+
+        <div class="card" data-quest="trap">
+          <img src="images/trap.jpg" />
+
+          <div class="info">
+            <h3>Пастка Людожера</h3>
+
+            <p>Втечи, поки ще не стало запізно.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© Escape Room</p>
+    </footer>
+    <script src="js/burger.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- =========================
+     MODAL
+========================== -->
+
+    <div class="modal">
+      <div class="modal-window">
+        <span class="close-modal">&times;</span>
+
+        <img id="modalImage" />
+
+        <div class="modal-content">
+          <h2 id="modalTitle"></h2>
+
+          <div class="stats">
+            <span id="modalAge"></span>
+            <span id="modalPlayers"></span>
+            <span id="modalTime"></span>
+          </div>
+
+          <p id="modalDescription"></p>
+
+          <button class="book-btn">Забронювати</button>
+
+          <form class="booking-form">
+            <input type="text" placeholder="Ваше ім'я" id="userName" />
+
+            <input type="tel" placeholder="Телефон" id="userPhone" />
+
+            <input type="date" id="userDate" />
+
+            <select id="userTime">
+              <option value="">Оберіть час</option>
+
+              <option>10:00</option>
+              <option>12:00</option>
+              <option>14:00</option>
+              <option>16:00</option>
+              <option>18:00</option>
+              <option>20:00</option>
+            </select>
+
+            <select id="players">
+              <option value="">Кількість гравців</option>
+
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select>
+
+            <textarea
+              id="comment"
+              placeholder="Коментар (необов'язково)"
+            ></textarea>
+
+            <button type="submit" class="send-booking">Надіслати заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

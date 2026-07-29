@@ -1,0 +1,213 @@
+/* ==========================================================
+   MEDIA QUERIES
+========================================================== */
+@media (max-width: 992px) {
+
+    .advantages-grid,
+    .services-grid,
+    .steps-grid,
+    .reviews-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .packages-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .contacts-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .quests-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .container {
+
+        width: min(100% - 30px, 100%);
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .hero {
+
+        text-align: center;
+
+    }
+
+    .hero-buttons {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+    .hero h1 {
+
+        font-size: 48px;
+
+    }
+
+    .hero p {
+
+        font-size: 18px;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .section-title {
+
+        margin-bottom: 45px;
+
+    }
+
+    section {
+
+        padding: 80px 0 !important;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .advantages-grid,
+    .services-grid,
+    .steps-grid,
+    .reviews-grid,
+    .quests-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .contacts-info {
+
+        text-align: center;
+
+    }
+
+    .contacts-info ul {
+
+        align-items: center;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .footer {
+
+        padding: 30px 0;
+
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .hero h1 {
+
+        font-size: 38px;
+
+    }
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+    .btn {
+
+        width: 100%;
+
+    }
+
+    .details-btn {
+
+        width: 100%;
+
+    }
+
+}
+
+@media (max-width:992px) {
+
+    .burger {
+
+        display: block;
+
+    }
+
+    .nav {
+
+        position: fixed;
+
+        top: 0;
+
+        right: -100%;
+
+        width: 320px;
+
+        height: 100vh;
+
+        background: #1a1a1a;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 35px;
+
+        transition: .4s;
+
+        z-index: 1100;
+
+    }
+
+}
+
+@media (max-width:992px) {
+
+    .phone {
+
+        display: none;
+
+    }
+
+}
+
+.nav.active {
+
+    right: 0;
+
+}
