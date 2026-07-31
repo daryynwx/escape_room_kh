@@ -7,31 +7,220 @@
     .services-grid,
     .steps-grid,
     .reviews-grid {
-
         grid-template-columns: repeat(2, 1fr);
-
     }
 
     .packages-grid {
-
         grid-template-columns: 1fr;
-
-    }
-
-    .contacts-grid {
-
-        grid-template-columns: 1fr;
-
     }
 
     .quests-grid {
-
         grid-template-columns: repeat(2, 1fr);
-
     }
 
+    .contacts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    @media (max-width: 992px) {
+
+    .logo {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .header .container {
+        gap: 15px;
+    }
+}
+@media (max-width: 992px) {
+
+    .burger {
+        display: block;
+    }
+
+    .phone {
+        display: none;
+    }
+.nav {
+    position: fixed;
+
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    width: auto;
+    max-width: 420px;
+    margin: 0 auto;
+
+    padding: 45px 30px;
+
+    border-radius: 28px;
+
+    background: rgba(24, 24, 24, 0.95);
+    backdrop-filter: blur(18px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-20px) scale(.96);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        visibility .35s ease;
+
+    z-index: 1400;
 }
 
+.nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+   .nav a {
+       width: 100%;
+
+       text-align: center;
+
+       padding: 16px 20px;
+
+       border-radius: 14px;
+
+       font-size: 18px;
+       font-weight: 700;
+
+       transition: .3s;
+   }
+
+.nav a::after{
+    display:none;
+}
+
+.nav a:hover {
+    color: #fff;
+
+    background: rgba(255, 140, 26, .15);
+
+    box-shadow: 0 0 20px rgba(255, 140, 26, .15);
+}
+}
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: min(100% - 30px, 100%);
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .section-title {
+        margin-bottom: 45px;
+    }
+
+    section {
+        padding: 80px 0 !important;
+    }
+
+    .advantages-grid,
+    .services-grid,
+    .steps-grid,
+    .reviews-grid,
+    .quests-grid,
+    .contacts-grid,
+    .booking-form,
+    .locations-grid,
+    .modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-info {
+        text-align: center;
+    }
+
+    .contacts-info ul {
+        align-items: center;
+    }
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .checkboxes {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .location-card iframe {
+        height: 300px;
+    }
+
+    .location-card h3 {
+        font-size: 18px;
+    }
+
+    .modal-image {
+        height: 260px;
+    }
+
+    .modal-body {
+        padding: 30px;
+    }
+
+    .modal-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn,
+    .details-btn {
+        width: 100%;
+    }
+}
 @media (max-width:768px) {
 
     .container {
