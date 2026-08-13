@@ -14,6 +14,10 @@ form.addEventListener("submit", async (e) => {
 
         });
 
+    const contactMethod = form.querySelector(
+        'input[name="contact"]:checked'
+    );
+
     const formData = {
 
         name: form.name.value,
@@ -23,8 +27,16 @@ form.addEventListener("submit", async (e) => {
         date: form.date.value,
         time: form.time.value,
         players: form.players.value,
+
+        contactMethod: contactMethod
+            ? contactMethod.value
+            : "Не обрано",
+
         comment: form.comment.value,
-        services: services.join(", ")
+
+        services: services.length
+            ? services.join(", ")
+            : "Не обрано"
 
     };
 

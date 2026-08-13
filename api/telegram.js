@@ -17,6 +17,7 @@ export default async function handler(req, res) {
             packageType,
             comment,
             services,
+            contactMethod,
         } = req.body;
 
         const message = `
@@ -32,6 +33,9 @@ export default async function handler(req, res) {
 🕒 <b>Час:</b> ${time}
 
 👥 <b>Гравців:</b> ${players}
+
+📱 <b>Зручний спосіб зв'язку:</b>
+${contactMethod || "Не обрано"}
 
 ⭐ <b>Додаткові послуги:</b>
 ${services || "Не обрано"}
