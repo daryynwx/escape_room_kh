@@ -73,10 +73,10 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="#quests" class="btn"> Обрати квест </a>
+            <a href="#quests" class="btn"> хочу грати </a>
 
             <a href="#packages" class="btn btn-outline">
-              Переглянути пакети свят
+              хочу свято
             </a>
           </div>
         </div>
@@ -138,9 +138,9 @@
             <img src="images/quests/harry.jpg" alt="Гаррі Поттер" />
 
             <div class="quest-overlay">
-              <h3>Гаррі Поттер</h3>
+              <h3>Перформанс «Косий Провулок»</h3>
 
-              <span>Косий провулок</span>
+              <span>за мотивами Гаррі Поттера</span>
 
               <div class="quest-info">
                 <p>🎭 З акторами</p>
@@ -155,7 +155,7 @@
             <img src="images/quests/squid.jpg" alt="Гра в кальмара" />
 
             <div class="quest-overlay">
-              <h3>Гра в кальмара</h3>
+              <h3>Квест-перформанс «Гра в кальмара»</h3>
 
               <div class="quest-info">
                 <p>🎭 З акторами</p>
@@ -188,9 +188,9 @@
             />
 
             <div class="quest-overlay">
-              <h3>Піжамна вечірка</h3>
+              <h3>Квест-перформанс "Піжамна вечірка у Хогвардсі"</h3>
 
-              <span>у Гоґвортсі</span>
+              <span>за мотивами фільму "Гаррі Поттер" ✨🪄</span>
 
               <div class="quest-info">
                 <p>🎭 З акторами</p>
@@ -220,7 +220,7 @@
             <img src="images/quests/wednesday.jpg" alt="Wednesday" />
 
             <div class="quest-overlay">
-              <h3>Wednesday</h3>
+              <h3> День народження з Венсдей</h3>
 
               <div class="quest-info">
                 <p>🎭 З акторами</p>
@@ -250,9 +250,9 @@
             <img src="images/quests/circus.jpg" alt="Цирк виродків" />
 
             <div class="quest-overlay">
-              <h3>At Pierrot's Show</h3>
+              <h3>Квест-хорор «At Pierrot’s show»</h3>
 
-              <span>The Freak Circus</span>
+              <span>за мотивами гри «Pierrot- The freak circus»</span>
 
               <div class="quest-info">
                 <p>🎭 З акторами</p>
@@ -646,77 +646,219 @@
         </div>
       </div> -->
     </section>
-    <section class="booking" id="booking">
-      <div class="container">
-        <div class="section-title">
-          <h2>Залишити заявку</h2>
-          <p>
-            Заповніть форму, і наш адміністратор зв'яжеться з вами для
-            підтвердження бронювання та уточнення всіх деталей.
-          </p>
+   <section class="booking" id="booking">
+  <div class="container">
+    <div class="section-title">
+      <h2>Залишити заявку</h2>
+
+      <p>
+        Заповніть форму, і наш адміністратор зв'яжеться з вами у зручний для вас спосіб для підтвердження бронювання та уточнення всіх деталей.
+      </p>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+
+      <div class="form-group">
+        <label for="name">Ім'я</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Ваше ім'я"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Телефон</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="+380..."
+          required
+        />
+      </div>
+
+      <!-- Новый блок -->
+
+     
+
+        <div class="form-group full-width">
+  <label>Як вам зручніше отримати відповідь?</label>
+
+  <div class="contact-methods">
+    <label class="contact-card">
+      <input type="radio" name="contact" value="Telegram" checked>
+      <span>📩 Telegram</span>
+    </label>
+
+    <label class="contact-card">
+      <input type="radio" name="contact" value="Viber">
+      <span>💜 Viber</span>
+    </label>
+
+    <label class="contact-card">
+      <input type="radio" name="contact" value="WhatsApp">
+      <span>💬 WhatsApp</span>
+    </label>
+
+    <label class="contact-card">
+      <input type="radio" name="contact" value="Дзвінок">
+      <span>📞 Телефонний дзвінок</span>
+    </label>
+  
+
+
+        </div>
+      
+
+          <div class="form-group full-width">
+    <label>Оберіть квест</label>
+
+    <div class="custom-select" id="questSelect">
+
+        <input
+            type="hidden"
+            id="quest"
+            name="quest"
+            value=""
+            required
+        />
+
+        <button
+            type="button"
+            class="custom-select-trigger"
+        >
+            <span class="selected-value">
+                Оберіть квест
+            </span>
+
+            <span class="select-arrow">⌄</span>
+        </button>
+
+        <div class="custom-select-options">
+
+            <div class="custom-option" data-value="Гаррі Поттер">
+                Гаррі Поттер: Косий провулок
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="Піжамна вечірка у Гоґвортсі"
+            >
+                Піжамна вечірка у Гоґвортсі
+            </div>
+
+            <div class="custom-option" data-value="Наруто">
+                Наруто
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="Пірати Карибського моря"
+            >
+                Пірати Карибського моря
+            </div>
+
+            <div class="custom-option" data-value="Венздей">
+                Венздей
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="At Pierrot's Show"
+            >
+                At Pierrot's Show
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="Пастка людожера"
+            >
+                Пастка людожера
+            </div>
+
+            <div class="custom-option" data-value="Лабубу">
+                Лабубу
+            </div>
+
+        </div>
+    </div>
+</div>
+
+         <div class="form-group">
+    <label>Пакет гри</label>
+
+    <div class="custom-select" id="packageSelect">
+
+        <input
+            type="hidden"
+            id="package"
+            name="package"
+            value="Мінімальний (2 години)"
+        />
+
+        <button
+            type="button"
+            class="custom-select-trigger"
+        >
+            <span class="selected-value">
+                Мінімальний (2 години)
+            </span>
+
+            <span class="select-arrow">⌄</span>
+        </button>
+
+        <div class="custom-select-options">
+
+            <div
+                class="custom-option selected"
+                data-value="Мінімальний (2 години)"
+            >
+                Мінімальний — 2 години
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="Оптимальний (3 години)"
+            >
+                Оптимальний — 3 години
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="Максимальний (4 години)"
+            >
+                Максимальний — 4 години
+            </div>
+
         </div>
 
-        <form class="booking-form" id="bookingForm">
-          <div class="form-group">
-            <label for="name">Ім'я</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Ваше ім'я"
-              required
-            />
-          </div>
+    </div>
+</div>
 
-          <div class="form-group">
-            <label for="phone">Телефон</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="+380..."
-              required
-            />
-          </div>
+       <div class="form-group">
+    <label for="date">Дата</label>
 
-          <div class="form-group">
-            <label for="quest">Оберіть квест</label>
+    <input
+        type="date"
+        id="date"
+        name="date"
+        required
+    />
+</div>
 
-            <select id="quest" name="quest" required>
-              <option value="">Оберіть квест</option>
+<div class="form-group">
+    <label for="time">Бажаний час</label>
 
-              <option>Гаррі Поттер</option>
-              <option>Піжамна вечірка у Гоґвортсі</option>
-              <option>Наруто</option>
-              <option>Пірати Карибського моря</option>
-              <option>Венздей</option>
-              <option>At Pierrot's Show</option>
-              <option>Пастка людожера</option>
-              <option>Лабубу</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="package">Пакет гри</label>
-
-            <select id="package" name="package">
-              <option>Мінімальний (2 години)</option>
-              <option>Оптимальний (3 години)</option>
-              <option>Максимальний (4 години)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="date">Дата</label>
-
-            <input type="date" id="date" name="date" required />
-          </div>
-
-          <div class="form-group">
-            <label for="time">Бажаний час</label>
-
-            <input type="time" id="time" name="time" required />
-          </div>
+    <input
+        type="time"
+        id="time"
+        name="time"
+        required
+    />
+</div>
 
           <div class="form-group">
             <label for="players">Кількість гравців</label>
@@ -733,34 +875,68 @@
           </div>
 
           <div class="form-group full-width">
+  <label>Додаткові послуги</label>
+
+  <div class="services-options">
+
+    <label class="service-option">
+      <input type="checkbox" value="Мафія для дітей" />
+      <span>🕵️ Гра в мафію для дітей</span>
+    </label>
+
+    <label class="service-option">
+      <input type="checkbox" value="Мафія для батьків" />
+      <span>👨‍👩‍👧 Гра в мафію для батьків</span>
+    </label>
+
+    <label class="service-option">
+      <input type="checkbox" value="Кейтеринг" />
+      <span>🍕 Кейтеринг</span>
+    </label>
+
+    <label class="service-option">
+      <input type="checkbox" value="Фото та відеозйомка" />
+      <span>📸 Фото та відеозйомка</span>
+    </label>
+
+    <label class="service-option">
+      <input type="checkbox" value="Піньята" />
+      <span>🎉 Піньята</span>
+    </label>
+
+  </div>
+</div>
+
+          <!-- <div class="form-group full-width">
             <label>Додаткові послуги</label>
 
             <div class="checkboxes">
-              <label>
-                <input type="checkbox" value="Мафія" />
-                Гра в мафію для дітей
-              </label>
+             <label>
+    <input type="checkbox" value="Мафія для дітей" />
+    Гра в мафію для дітей
+</label>
 
-              <input type="checkbox" value="Мафія" />
-                Гра в мафію для батьків
-              </label>
+<label>
+    <input type="checkbox" value="Мафія для батьків" />
+    Гра в мафію для батьків
+</label>
 
-              <label>
-                <input type="checkbox" value="Кейтеринг" />
-                Кейтеринг
-              </label>
+<label>
+    <input type="checkbox" value="Кейтеринг" />
+    Кейтеринг
+</label>
 
-              <label>
-                <input type="checkbox" value="Фото та відео зйомка" />
-                Фото та відео зйомка
-              </label>
+<label>
+    <input type="checkbox" value="Фото та відеозйомка" />
+    Фото та відеозйомка
+</label>
 
-               <label>
-                <input type="checkbox" value="Піньята" />
-                Піньята
-              </label>
+<label>
+    <input type="checkbox" value="Піньята" />
+    Піньята
+</label>
             </div>
-          </div>
+          </div> -->
 
           <div class="form-group full-width">
             <label for="comment">Коментар</label>

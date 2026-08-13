@@ -454,3 +454,21 @@
         font-size: 18px;
     }
 }
+
+@media (max-width:768px) {
+
+    .contact-methods {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .services-options {
+        grid-template-columns: 1fr;
+    }
+
+}

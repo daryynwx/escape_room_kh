@@ -67,3 +67,95 @@ form.addEventListener("submit", async (e) => {
     }
 
 });
+/* =========================
+   CUSTOM SELECTS
+========================= */
+
+const customSelects = document.querySelectorAll(".custom-select");
+
+customSelects.forEach((select) => {
+
+    const trigger = select.querySelector(".custom-select-trigger");
+    const selectedValue = select.querySelector(".selected-value");
+    const options = select.querySelectorAll(".custom-option");
+    const input = select.querySelector("input");
+
+    trigger.addEventListener("click", () => {
+
+        customSelects.forEach((otherSelect) => {
+
+            if (otherSelect !== select) {
+                otherSelect.classList.remove("open");
+            }
+
+        });
+
+        select.classList.toggle("open");
+
+    });
+
+    options.forEach((option) => {
+
+        option.addEventListener("click", () => {
+
+            const value = option.dataset.value;
+
+            selectedValue.textContent = option.textContent.trim();
+
+            input.value = value;
+
+            options.forEach((item) => {
+                item.classList.remove("selected");
+            });
+
+            option.classList.add("selected");
+
+            select.classList.remove("open");
+
+        });
+
+    });
+
+});
+
+
+document.addEventListener("click", (event) => {
+
+    customSelects.forEach((select) => {
+
+        if (!select.contains(event.target)) {
+            select.classList.remove("open");
+        }
+
+    });
+
+});
+
+const dateInput = document.querySelector("#date");
+
+const today = new Date().toISOString().split("T")[0];
+
+dateInput.min = today;
+
+/* =========================
+   DATE & TIME PICKER
+========================= */
+
+const dateInput = document.querySelector("#date");
+const timeInput = document.querySelector("#time");
+
+const today = new Date().toISOString().split("T")[0];
+
+dateInput.min = today;
+
+dateInput.addEventListener("click", () => {
+    if (dateInput.showPicker) {
+        dateInput.showPicker();
+    }
+});
+
+timeInput.addEventListener("click", () => {
+    if (timeInput.showPicker) {
+        timeInput.showPicker();
+    }
+});
