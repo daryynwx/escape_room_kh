@@ -137,25 +137,3 @@ const today = new Date().toISOString().split("T")[0];
 
 dateInput.min = today;
 
-/* =========================
-   DATE & TIME PICKER
-========================= */
-
-const dateInput = document.querySelector("#date");
-const timeInput = document.querySelector("#time");
-
-const today = new Date().toISOString().split("T")[0];
-
-dateInput.min = today;
-
-dateInput.addEventListener("click", () => {
-    if (dateInput.showPicker) {
-        dateInput.showPicker();
-    }
-});
-
-timeInput.addEventListener("click", () => {
-    if (timeInput.showPicker) {
-        timeInput.showPicker();
-    }
-});
