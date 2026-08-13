@@ -5,7 +5,7 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const services = Array.from(
-        form.querySelectorAll(".checkboxes input[type='checkbox']:checked")
+        form.querySelectorAll(".services-options input[type='checkbox']:checked")
     ).map(service => service.value);
 
     const contactMethod = form.querySelector(
