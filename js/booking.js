@@ -4,15 +4,9 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const services = [];
-
-    document
-        .querySelectorAll(".checkboxes input:checked")
-        .forEach(service => {
-
-            services.push(service.value);
-
-        });
+    const services = Array.from(
+        form.querySelectorAll(".checkboxes input[type='checkbox']:checked")
+    ).map(service => service.value);
 
     const contactMethod = form.querySelector(
         'input[name="contact"]:checked'
@@ -32,13 +26,17 @@ form.addEventListener("submit", async (e) => {
             ? contactMethod.value
             : "Не обрано",
 
-        comment: form.comment.value,
-
         services: services.length
             ? services.join(", ")
-            : "Не обрано"
+            : "Не обрано",
+
+        comment: form.comment.value
 
     };
+
+    console.log("SERVICES:", services);
+    console.log("CONTACT:", contactMethod?.value);
+    console.log("FORM DATA:", formData);
 
     try {
 
